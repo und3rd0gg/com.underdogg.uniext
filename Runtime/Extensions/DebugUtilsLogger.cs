@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UniExt.Extensions {
     namespace _Color_sphere.CodeBase.Infrastructure.Utils {
-        public static class DebugUtils {
+        public static class DebugUtilsLogger {
             public static void Log(string message, DebugMessageType debugMessageType = default, DebugMessageLevel debugMessageLevel = default) {
                 var debugMessage = debugMessageType switch {
                     DebugMessageType.GameEvent => $"<color=yellow>{nameof(DebugMessageType.GameEvent).ToUpper()}",
