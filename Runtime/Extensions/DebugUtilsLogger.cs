@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     namespace _Color_sphere.CodeBase.Infrastructure.Utils {
         public static class DebugUtilsLogger {
             public static void Log(string message, DebugMessageType debugMessageType = default, DebugMessageLevel debugMessageLevel = default) {

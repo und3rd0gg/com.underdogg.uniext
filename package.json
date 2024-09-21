@@ -1,15 +1,12 @@
 {
   "name": "com.underdogg.uniext",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "displayName": "UniExt",
   "type": "library",
+  "author": {
+    "name": "underdogg.",
+    "email": "cfytr@duck.com"
+  },
   "description": "A small collection of useful extensions that can be used in any project.",
-  "license": "MIT",
-  "samples": [
-    {
-      "displayName": "Playtesting Sample",
-      "description": "Contains sample for uploading to Yandex Games and manually testing the SDK.",
-      "path": "Samples~/Playtesting"
-    }
-  ]
+  "license": "MIT"
 }

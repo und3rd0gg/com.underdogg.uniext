@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace UniExt.Dictionary
+namespace com.underdogg.uniext.Runtime.Dictionary
 {
     [Serializable]
     public sealed class UniDict<TKey, TValue>
@@ -15,15 +15,14 @@ namespace UniExt.Dictionary
         public UniDict(int parallelCount = 100)
         {
             ParallelCount = 100;
-            Dictionary    = new List<DictEntry<TKey, TValue>>();
+            Dictionary = new List<DictEntry<TKey, TValue>>();
         }
 
         public static explicit operator Dictionary<TKey, TValue>(UniDict<TKey, TValue> uniDict)
         {
             var dict = new Dictionary<TKey, TValue>();
 
-            foreach (DictEntry<TKey, TValue> pair in uniDict.Dictionary)
-            {
+            foreach (DictEntry<TKey, TValue> pair in uniDict.Dictionary) {
                 dict[pair.Key] = pair.Value;
             }
 
@@ -34,8 +33,7 @@ namespace UniExt.Dictionary
         {
             var uniDict = new UniDict<TKey, TValue>();
 
-            foreach (KeyValuePair<TKey, TValue> pair in dictionary)
-            {
+            foreach (KeyValuePair<TKey, TValue> pair in dictionary) {
                 uniDict.Dictionary.Add(new DictEntry<TKey, TValue> { Key = pair.Key, Value = pair.Value });
             }
 
@@ -48,13 +46,10 @@ namespace UniExt.Dictionary
                 GetValue(key);
             set
             {
-                if (!Dictionary.Any(x => x.Key.Equals(key)))
-                {
+                if (!Dictionary.Any(x => x.Key.Equals(key))) {
                     Dictionary
                         .Add(new DictEntry<TKey, TValue> { Key = key, Value = value });
-                }
-                else
-                {
+                } else {
                     DictEntry<TKey, TValue> entry = Dictionary
                         .Find(x => x.Key.Equals(key));
                     entry.Value = value;
@@ -66,15 +61,12 @@ namespace UniExt.Dictionary
         {
             get
             {
-                if (Dictionary.Count >= ParallelCount)
-                {
+                if (Dictionary.Count >= ParallelCount) {
                     return Dictionary.Select(x => x.Key)
-                                     .AsParallel();
+                        .AsParallel();
                 }
-                else
-                {
-                    return Dictionary.Select(x => x.Key);
-                }
+
+                return Dictionary.Select(x => x.Key);
             }
         }
 
@@ -82,17 +74,14 @@ namespace UniExt.Dictionary
         {
             get
             {
-                if (Dictionary.Count >= ParallelCount)
-                {
+                if (Dictionary.Count >= ParallelCount) {
                     return Dictionary
-                           .Select(x => x.Value)
-                           .AsParallel();
+                        .Select(x => x.Value)
+                        .AsParallel();
                 }
-                else
-                {
-                    return Dictionary
-                        .Select(x => x.Value);
-                }
+
+                return Dictionary
+                    .Select(x => x.Value);
             }
         }
 
@@ -104,6 +93,14 @@ namespace UniExt.Dictionary
                 .Find(x => x.Key.Equals(key)).Value;
 
         public void AddEntry(TKey key, TValue value) =>
-            Dictionary.Add(new DictEntry<TKey, TValue> { Key = key, Value = value });
+            Dictionary.Add(new DictEntry<TKey, TValue> { Key = key, Value = value, });
+
+        public bool HasKey(TKey key) =>
+            Dictionary
+                .Any(x => x.Key.Equals(key));
+
+        public bool HasValue(TValue value) =>
+            Dictionary
+                .Any(x => x.Value.Equals(value));
     }
 }

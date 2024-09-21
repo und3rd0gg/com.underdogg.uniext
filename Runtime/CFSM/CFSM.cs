@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UniExt.CFSM
+namespace com.underdogg.uniext.Runtime.CFSM
 {
     public class CFSM
     {

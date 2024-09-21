@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UniExt.PayloadedFSM {
+namespace com.underdogg.uniext.Runtime.PayloadedFSM {
     public sealed class Transition<TPayload, TStates> where TStates : Enum
     {
         private FSM<TStates, TPayload> _fsm;

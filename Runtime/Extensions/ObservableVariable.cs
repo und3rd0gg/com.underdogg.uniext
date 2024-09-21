@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace UniExt.Extensions
+namespace com.underdogg.uniext.Runtime.Extensions
 {
     public interface IObservable<T>
     {

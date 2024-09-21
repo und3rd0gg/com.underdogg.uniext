@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class CanvasGroupExt {
         public static void SetActive(this CanvasGroup canvasGroup, bool isActive) {
             canvasGroup.alpha = isActive ? 1 : 0;

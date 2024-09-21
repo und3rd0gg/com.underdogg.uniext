@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class MeshExt {
         public static void RecalculateNormals(this Mesh mesh, float angle) {
             var cosineThreshold = Mathf.Cos(angle * Mathf.Deg2Rad);

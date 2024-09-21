@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace UniExt.Dictionary {
+namespace com.underdogg.uniext.Runtime.Dictionary {
     [Serializable]
     public struct DictEntry<TKey, TValue>
     {

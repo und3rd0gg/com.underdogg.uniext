@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class ListExt {
         public static T Last<T>(this List<T> list) {
             return list[^1];

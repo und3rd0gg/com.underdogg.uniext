@@ -1,4 +1,4 @@
-﻿namespace UniExt.CFSM
+﻿namespace com.underdogg.uniext.Runtime.CFSM
 {
     public interface IState : IExitableState
     {

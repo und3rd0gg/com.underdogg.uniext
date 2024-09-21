@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UniExt.PayloadedFSM {
+namespace com.underdogg.uniext.Runtime.PayloadedFSM {
     public sealed class State<TPayload, TStates> where TStates : Enum
     {
         private readonly Action<TPayload>[] _actions;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniExt
+namespace com.underdogg.uniext.Runtime
 {
     public static class Remap
     {

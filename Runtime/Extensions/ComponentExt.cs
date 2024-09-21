@@ -1,7 +1,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class ComponentExt {
         public static T AddComponent<T>(this GameObject go, T toAdd) where T : Component {
             return go.AddComponent<T>().GetCopyOf(toAdd);

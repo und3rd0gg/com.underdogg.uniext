@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UniExt.PayloadedFSM
+namespace com.underdogg.uniext.Runtime.PayloadedFSM
 {
     public sealed class FSM<TStates, TPayload> where TStates : Enum
     {

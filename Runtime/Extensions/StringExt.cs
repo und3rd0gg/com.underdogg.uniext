@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class StringExt {
         public static string FormatNumber(this int n) {
             if (n < 1000) return n.ToString(CultureInfo.InvariantCulture);

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class DrawExt {
         public static void DrawCircle(this LineRenderer line, ref Vector3[] points, float radius, float lineWidth,
             float height = 0f) {

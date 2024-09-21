@@ -1,4 +1,4 @@
-﻿namespace UniExt.PayloadedFSM {
+﻿namespace com.underdogg.uniext.Runtime.PayloadedFSM {
     public abstract class Decision<TPayload>
     {
         protected TPayload Payload;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class VectorExt {
         public static float Angle(this Vector2 direction) {
             var rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

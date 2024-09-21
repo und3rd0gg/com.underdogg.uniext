@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public class MathTool {
         public static string GetRandomKeyFromWeightDict(Dictionary<string, int> dict) {
             var num = 0;

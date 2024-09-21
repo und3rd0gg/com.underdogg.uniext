@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UniExt.Extensions {
+namespace com.underdogg.uniext.Runtime.Extensions {
     public static class SpriteExt {
         public static void SetAlpha(this SpriteRenderer sr, float alpha) {
             var c = sr.color;

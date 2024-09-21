@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UniExt.Extensions
+namespace com.underdogg.uniext.Runtime.Extensions
 {
     public static class EnumerableExt
     {

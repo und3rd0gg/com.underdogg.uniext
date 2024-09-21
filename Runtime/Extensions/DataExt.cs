@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UniExt.Extensions
+namespace com.underdogg.uniext.Runtime.Extensions
 {
     public static class DataExt
     {
