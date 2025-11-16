@@ -1,0 +1,18 @@
+{
+    "name": "Underdogg.UniExt.Editor",
+    "rootNamespace": "com.underdogg.uniext.Editor",
+    "references": [
+        "Underdogg.UniExt"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
