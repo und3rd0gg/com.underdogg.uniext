@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace com.underdogg.uniext.Runtime.Extensions
@@ -7,7 +7,13 @@ namespace com.underdogg.uniext.Runtime.Extensions
     {
         public static IEnumerable<T> ForEach<T>(this IEnumerable<T> enumerable, Action<T> action)
         {
-            foreach (T element in enumerable)
+            if (enumerable == null)
+                throw new ArgumentNullException(nameof(enumerable));
+
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            foreach (var element in enumerable)
             {
                 action(element);
             }

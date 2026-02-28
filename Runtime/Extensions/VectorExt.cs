@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace com.underdogg.uniext.Runtime.Extensions {
@@ -26,8 +27,12 @@ namespace com.underdogg.uniext.Runtime.Extensions {
                 var q = (b.x - a.x) / (a.y - b.y);
                 var sn = c.x - d.x + (c.y - d.y) * q;
                 var fn = c.x - a.x + (c.y - a.y) * q;
+                if (Mathf.Approximately(sn, 0f))
+                    throw new InvalidOperationException("Line segments are parallel or degenerate.");
                 n = fn / sn;
             } else {
+                if (Mathf.Approximately(c.y - d.y, 0f))
+                    throw new InvalidOperationException("Line segments are parallel or degenerate.");
                 n = (c.y - a.y) / (c.y - d.y);
             }
 
@@ -45,8 +50,12 @@ namespace com.underdogg.uniext.Runtime.Extensions {
                 var q = (b.x - a.x) / (a.z - b.z);
                 var sn = c.x - d.x + (c.z - d.z) * q;
                 var fn = c.x - a.x + (c.z - a.z) * q;
+                if (Mathf.Approximately(sn, 0f))
+                    throw new InvalidOperationException("Line segments are parallel or degenerate.");
                 n = fn / sn;
             } else {
+                if (Mathf.Approximately(c.z - d.z, 0f))
+                    throw new InvalidOperationException("Line segments are parallel or degenerate.");
                 n = (c.z - a.z) / (c.z - d.z);
             }
 

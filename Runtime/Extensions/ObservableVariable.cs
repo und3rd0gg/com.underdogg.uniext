@@ -1,12 +1,14 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.underdogg.uniext.Runtime.Extensions
 {
     public interface IObservable<T>
     {
-        public event Action<T> OnChanged;
-        public T               Value { get; set; }
+        event Action<T> OnChanged;
+        T Value { get; set; }
+        bool SetValue(T value, bool forceNotify = false);
     }
 
     [Serializable]
@@ -19,20 +21,27 @@ namespace com.underdogg.uniext.Runtime.Extensions
         public T Value
         {
             get => _value;
-            set
-            {
-                _value = value;
-                OnChanged?.Invoke(value);
-            }
+            set => SetValue(value);
         }
 
         public ObservableVariable() =>
-            Value = default;
+            _value = default;
 
         public ObservableVariable(T defaultValue) =>
-            Value = defaultValue;
+            _value = defaultValue;
+
+        public bool SetValue(T value, bool forceNotify = false)
+        {
+            var changed = !EqualityComparer<T>.Default.Equals(_value, value);
+            if (!changed && !forceNotify)
+                return false;
+
+            _value = value;
+            OnChanged?.Invoke(value);
+            return changed;
+        }
 
         public override string ToString() =>
-            Value.ToString();
+            _value?.ToString() ?? string.Empty;
     }
 }

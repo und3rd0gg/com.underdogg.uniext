@@ -104,8 +104,7 @@ namespace com.underdogg.uniext.Runtime.Extensions {
             }
 
             public override bool Equals(object obj) {
-                var key = (VertexKey)obj;
-                return _x == key._x && _y == key._y && _z == key._z;
+                return obj is VertexKey key && _x == key._x && _y == key._y && _z == key._z;
             }
 
             public override int GetHashCode() {

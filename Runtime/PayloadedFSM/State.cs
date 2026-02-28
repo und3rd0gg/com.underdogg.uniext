@@ -8,18 +8,14 @@ namespace com.underdogg.uniext.Runtime.PayloadedFSM {
 
         private readonly System.Action _onEnterAction;
         private readonly System.Action _onExitAction;
-        
-        public TPayload Payload;
 
-        public State(TPayload payload,
-            Action<TPayload>[] actions,
+        public State(Action<TPayload>[] actions,
             Transition<TPayload, TStates>[] transitions,
             System.Action onEnterAction,
             System.Action onExitAction)
         {
-            _actions = actions;
-            Payload = payload;
-            _transitions = transitions;
+            _actions = actions ?? Array.Empty<Action<TPayload>>();
+            _transitions = transitions ?? Array.Empty<Transition<TPayload, TStates>>();
             _onEnterAction = onEnterAction;
             _onExitAction = onExitAction;
         }
